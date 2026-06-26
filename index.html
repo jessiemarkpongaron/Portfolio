@@ -189,12 +189,28 @@
       padding-right: 40px;
     }
 
+    /* Decorative blob — only ~1/4 visible, clipped top-right */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      width: 820px; height: 820px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, rgba(195,215,245,.35) 0%, rgba(220,234,252,.18) 55%, transparent 100%);
+      top: -340px; right: -280px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    [data-theme="dark"] .hero-right::before {
+      background: linear-gradient(90deg, rgba(40,90,180,.3) 0%, rgba(20,60,140,.12) 55%, transparent 100%);
+    }
+
     .hero-photo-img {
       width: 420px; height: 420px; border-radius: 50%;
       object-fit: cover; object-position: center top;
       display: block;
       box-shadow: 0 24px 70px rgba(0,0,0,.18);
       margin-right: -30px;
+      position: relative; z-index: 1;
     }
     [data-theme="dark"] .hero-photo-img { box-shadow: 0 24px 70px rgba(9,30,66,.7); }
 
