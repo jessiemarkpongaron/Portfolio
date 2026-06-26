@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jessie Mark Pongaron — AI Automation Specialist</title>
+  <meta name="description" content="Jessie Mark Pongaron is an AI Automation Specialist who builds intelligent workflows and AI agents that eliminate busywork and scale businesses." />
+  <link rel="icon" type="image/jpeg" href="ProfilePicture.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1877C8;
+      --blue-light: #5cb3ff;
+      --blue-hover: #1565b0;
+      --radius: 12px;
+      --tr: .25s ease;
+    }
+
+    [data-theme="light"] {
+      --bg:           #f4f7fb;
+      --surface:      #ffffff;
+      --nav-bg:       rgba(9,30,66,.95);
+      --text:         #091e42;
+      --text-s:       #1e3a5f;
+      --text-muted:   #6b7a99;
+      --border:       #e2e8f0;
+      --shadow:       0 4px 24px rgba(13,43,94,.10);
+      --shadow-h:     0 14px 44px rgba(13,43,94,.16);
+      --stats-bg:     #0D2B5E;
+      --section-alt:  #f4f7fb;
+      --hero-bg:      linear-gradient(135deg, #091e42 0%, #0d2b5e 55%, #163568 100%);
+      --cta-bg:       linear-gradient(135deg, #0D2B5E 0%, #1a3a6e 100%);
+      --input-bg:     #ffffff;
+      --footer-bg:    #091e42;
+    }
+
+    [data-theme="dark"] {
+      --bg:           #091e42;
+      --surface:      #1a3a6e;
+      --nav-bg:       rgba(9,30,66,.96);
+      --text:         #e8eef8;
+      --text-s:       #c5d5ed;
+      --text-muted:   #8fafd4;
+      --border:       rgba(255,255,255,.1);
+      --shadow:       0 4px 24px rgba(9,30,66,.4);
+      --shadow-h:     0 14px 44px rgba(9,30,66,.55);
+      --stats-bg:     #0d2b5e;
+      --section-alt:  #0d2b5e;
+      --hero-bg:      linear-gradient(135deg, #091e42 0%, #0d2b5e 55%, #1a3a6e 100%);
+      --cta-bg:       linear-gradient(135deg, #0d2b5e 0%, #1a3a6e 100%);
+      --input-bg:     #0d2b5e;
+      --footer-bg:    #091e42;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background var(--tr), color var(--tr);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw; height: 68px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-avatar {
+      width: 36px; height: 36px; border-radius: 50%; overflow: hidden;
+      border: 2px solid rgba(92,179,255,.5); flex-shrink: 0;
+    }
+    .nav-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-name { color: #fff; font-weight: 700; font-size: .98rem; letter-spacing: -.2px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: .89rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .theme-toggle {
+      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.14);
+      color: #fff; border-radius: 8px; width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: .95rem; transition: background .2s, transform .15s;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,.16); transform: scale(1.06); }
+    .nav-cta {
+      background: var(--blue); color: #fff;
+      padding: 8px 20px; border-radius: 8px;
+      font-size: .86rem; font-weight: 600; text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 92vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 0;
+      padding: 100px 6vw 80px 6vw;
+      position: relative; overflow: hidden;
+      background: var(--bg);
+    }
+
+    .hero-left { position: relative; z-index: 1; text-align: left; margin-left: auto; padding-right: 100px; }
+
+    .hero-greeting {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-block; padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+      font-weight: 800; line-height: 1.1;
+      color: var(--text); letter-spacing: -.5px;
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(.98rem, 1.8vw, 1.22rem);
+      font-weight: 600; color: var(--text-muted);
+      margin-bottom: 34px; line-height: 1.45;
+    }
+
+    .hero-contact-list {
+      display: flex; flex-direction: column; gap: 13px;
+      margin-bottom: 36px; align-items: flex-start;
+    }
+    .hero-contact-link {
+      display: inline-flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .hero-contact-icon {
+      width: 34px; height: 34px; flex-shrink: 0;
+      background: var(--blue); border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; transition: background .2s;
+    }
+    .hero-contact-link:hover .hero-contact-icon { background: var(--blue-hover); }
+    .hero-contact-text {
+      font-size: .83rem; font-weight: 700; letter-spacing: .8px;
+      text-transform: uppercase; color: var(--blue);
+    }
+    [data-theme="dark"] .hero-contact-text { color: var(--blue-light); }
+
+    .hero-action-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
+
+    .btn-primary {
+      background: var(--blue); color: #fff;
+      padding: 13px 30px; border-radius: 10px;
+      font-size: .95rem; font-weight: 700; text-decoration: none;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(24,119,200,.42);
+    }
+    .btn-primary:hover { background: var(--blue-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(24,119,200,.52); }
+
+    .btn-outline {
+      border: 2px solid var(--border); color: var(--text);
+      padding: 13px 30px; border-radius: 10px;
+      font-size: .95rem; font-weight: 600; text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+    [data-theme="dark"] .btn-outline:hover { border-color: var(--blue-light); color: var(--blue-light); }
+
+    .hero-right {
+      position: relative; z-index: 1;
+      display: flex; justify-content: center; align-items: center;
+      padding-right: 40px;
+    }
+
+    .hero-photo-img {
+      width: 420px; height: 420px; border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      display: block;
+      box-shadow: 0 24px 70px rgba(0,0,0,.18);
+      margin-right: -30px;
+    }
+    [data-theme="dark"] .hero-photo-img { box-shadow: 0 24px 70px rgba(9,30,66,.7); }
+
+    /* ─── SECTION SHELL ─── */
+    section { padding: 86px 6vw; }
+    .section-label {
+      font-size: .74rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 10px;
+    }
+    [data-theme="dark"] .section-label { color: var(--blue-light); }
+    .section-title {
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      font-weight: 800; color: var(--text); line-height: 1.2;
+      letter-spacing: -.3px; margin-bottom: 13px;
+    }
+    .section-sub { font-size: .98rem; color: var(--text-muted); max-width: 520px; }
+    .section-head { margin-bottom: 50px; }
+    .section-head.center { text-align: center; }
+    .section-head.center .section-sub { margin: 0 auto; }
+
+    /* ─── STATS ─── */
+    .stats { background: var(--stats-bg); padding: 54px 6vw; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px,1fr)); gap: 34px; text-align: center; }
+    .stat-num { font-size: 2.5rem; font-weight: 800; color: var(--blue-light); line-height: 1; }
+    .stat-label { font-size: .83rem; color: rgba(255,255,255,.58); margin-top: 6px; font-weight: 500; }
+
+    /* ─── ABOUT ─── */
+    .about { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: start; }
+    .about-left { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+    .about-photo {
+      width: 220px; height: 220px; border-radius: 50%; overflow: hidden;
+      border: 3px solid rgba(92,179,255,.4);
+      box-shadow: 0 0 0 12px rgba(24,119,200,.06), 0 20px 60px rgba(0,0,0,.25);
+      flex-shrink: 0;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-badges { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; max-width: 220px; }
+    .about-badge {
+      background: rgba(24,119,200,.1); border: 1px solid rgba(24,119,200,.22);
+      color: var(--blue); font-size: .73rem; font-weight: 600;
+      padding: 3px 11px; border-radius: 99px;
+    }
+    [data-theme="dark"] .about-badge { color: var(--blue-light); background: rgba(92,179,255,.08); border-color: rgba(92,179,255,.18); }
+    .about-text h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 800; color: var(--text); margin-bottom: 14px; letter-spacing: -.3px; }
+    .about-text p { font-size: .96rem; color: var(--text-muted); line-height: 1.82; margin-bottom: 14px; }
+    .about-tools { margin-top: 26px; }
+    .about-tools h4 { font-size: .76rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 11px; }
+    .tools-row { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tool-chip {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text-muted); font-size: .78rem; font-weight: 600;
+      padding: 5px 12px; border-radius: 8px; transition: border-color .2s, color .2s;
+    }
+    .tool-chip:hover { border-color: var(--blue); color: var(--blue); }
+    [data-theme="dark"] .tool-chip:hover { border-color: var(--blue-light); color: var(--blue-light); }
+
+    /* ─── SERVICES ─── */
+    .services { background: var(--section-alt); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(278px,1fr)); gap: 20px; }
+    .service-card {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 28px 24px; box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-h); }
+    .service-icon {
+      width: 48px; height: 48px; background: rgba(24,119,200,.1);
+      border-radius: 11px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 15px; font-size: 1.35rem;
+    }
+    .service-card h3 { font-size: .98rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .service-card p { font-size: .87rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ─── WHY ME ─── */
+    .why { background: var(--bg); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .why-photo-wrap {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow-h);
+      aspect-ratio: 3/4; max-height: 480px;
+    }
+    .why-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 20px; margin-top: 26px; }
+    .why-list li { display: flex; align-items: flex-start; gap: 14px; }
+    .why-check {
+      flex-shrink: 0; width: 28px; height: 28px;
+      background: rgba(24,119,200,.13); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue); font-size: .82rem; font-weight: 700; margin-top: 1px;
+    }
+    [data-theme="dark"] .why-check { color: var(--blue-light); background: rgba(92,179,255,.1); }
+    .why-list li p { font-size: .9rem; color: var(--text-muted); }
+    .why-list li strong { color: var(--text); display: block; font-size: .95rem; margin-bottom: 3px; }
+
+    /* ─── PROJECTS ─── */
+    .projects { background: var(--section-alt); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(296px,1fr)); gap: 24px; }
+    .project-card {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      background: var(--surface);
+      transition: transform .2s, box-shadow .2s; cursor: pointer;
+    }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-h); }
+    .project-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; position: relative; background: #020810; }
+    .project-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s; }
+    .project-card:hover .project-thumb img { transform: scale(1.04); }
+    .project-thumb-overlay {
+      position: absolute; inset: 0; background: rgba(7,17,31,.6);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .25s;
+    }
+    .project-card:hover .project-thumb-overlay { opacity: 1; }
+    .project-thumb-overlay span {
+      background: #fff; color: #091e42;
+      font-size: .79rem; font-weight: 700; padding: 7px 17px; border-radius: 99px;
+    }
+    .project-info { padding: 20px 22px 22px; }
+    .project-info h3 { font-size: .97rem; font-weight: 700; color: var(--text); margin-bottom: 7px; }
+    .project-info p { font-size: .85rem; color: var(--text-muted); line-height: 1.62; margin-bottom: 13px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tag {
+      font-size: .69rem; font-weight: 600; letter-spacing: .3px;
+      padding: 3px 10px; border-radius: 99px;
+      background: rgba(24,119,200,.09); color: var(--blue);
+      border: 1px solid rgba(24,119,200,.18);
+    }
+    [data-theme="dark"] .project-tag { color: var(--blue-light); background: rgba(92,179,255,.07); border-color: rgba(92,179,255,.16); }
+
+    /* Lightbox */
+    #jp-lightbox {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.93);
+      display: none; align-items: center; justify-content: center; padding: 24px;
+    }
+    #jp-lightbox.open { display: flex; }
+    #jp-lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; box-shadow: 0 24px 80px rgba(0,0,0,.6); }
+    #jp-lb-close {
+      position: absolute; top: 20px; right: 24px;
+      background: rgba(255,255,255,.14); border: none; color: #fff;
+      font-size: 1.4rem; width: 44px; height: 44px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    #jp-lb-close:hover { background: rgba(255,255,255,.28); }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--bg); }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--surface); border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 19px 22px; display: flex; justify-content: space-between; align-items: center;
+      text-align: left; gap: 14px;
+    }
+    .faq-question span { font-size: .94rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .faq-icon {
+      flex-shrink: 0; width: 28px; height: 28px;
+      background: var(--section-alt); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue); font-size: 1.2rem; font-weight: 300;
+      transition: transform .3s, background .2s;
+    }
+    [data-theme="dark"] .faq-icon { color: var(--blue-light); }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: #fff !important; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer p { padding: 0 22px 18px; font-size: .9rem; color: var(--text-muted); line-height: 1.72; }
+
+    /* ─── CTA ─── */
+    .cta-band {
+      background: var(--cta-bg);
+      border-top: 1px solid rgba(92,179,255,.08);
+      border-bottom: 1px solid rgba(92,179,255,.08);
+      text-align: center; padding: 80px 6vw;
+    }
+    .cta-band h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 800; color: #fff; margin-bottom: 13px; }
+    .cta-band p { color: rgba(255,255,255,.68); font-size: 1rem; max-width: 480px; margin: 0 auto 32px; }
+
+    /* ─── CONTACT ─── */
+    .contact { background: var(--section-alt); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 54px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 22px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon {
+      flex-shrink: 0; width: 44px; height: 44px;
+      background: rgba(24,119,200,.11); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .contact-item h4 { font-size: .8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 3px; }
+    .contact-item p, .contact-item a { font-size: .95rem; color: var(--text); text-decoration: none; font-weight: 500; }
+    .contact-item a:hover { color: var(--blue); }
+    [data-theme="dark"] .contact-item a:hover { color: var(--blue-light); }
+    .contact-form { display: flex; flex-direction: column; gap: 13px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group label { font-size: .82rem; font-weight: 600; color: var(--text); }
+    .form-group input, .form-group textarea, .form-group select {
+      border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 11px 13px; font-size: .9rem; font-family: 'Inter', sans-serif;
+      color: var(--text); background: var(--input-bg);
+      transition: border-color .2s, box-shadow .2s; outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,119,200,.12);
+    }
+    .form-group select option { background: var(--surface); color: var(--text); }
+    .form-group textarea { resize: vertical; min-height: 108px; }
+    .btn-submit {
+      background: var(--blue); color: #fff; border: none; border-radius: 10px;
+      cursor: pointer; padding: 13px 28px; font-size: .95rem; font-weight: 700;
+      font-family: 'Inter', sans-serif; transition: background .2s, transform .15s;
+    }
+    .btn-submit:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    #form-msg { display: none; font-size: .87rem; font-weight: 600; margin-top: 5px; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--footer-bg); padding: 46px 6vw 22px; }
+    .footer-inner {
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 40px; margin-bottom: 38px;
+    }
+    .footer-brand-name { color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+    .footer-brand p { font-size: .83rem; color: rgba(255,255,255,.4); line-height: 1.7; max-width: 210px; }
+    .footer-brand .tagline { margin-top: 10px; font-style: italic; color: rgba(255,255,255,.28); font-size: .78rem; }
+    .footer-col h4 { color: #fff; font-size: .8rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col a { color: rgba(255,255,255,.42); text-decoration: none; font-size: .83rem; transition: color .2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding-top: 20px; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { font-size: .79rem; color: rgba(255,255,255,.28); }
+    .social-links { display: flex; gap: 8px; }
+    .social-links a {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(255,255,255,.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.42); text-decoration: none; font-size: .82rem;
+      transition: background .2s, color .2s;
+    }
+    .social-links a:hover { background: var(--blue); color: #fff; }
+
+    /* ─── AI CHAT WIDGET ─── */
+    #jp-chat-btn {
+      position: fixed; bottom: 28px; right: 28px; z-index: 1000;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      border: none; cursor: pointer;
+      box-shadow: 0 6px 26px rgba(24,119,200,.55);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .2s, box-shadow .2s;
+    }
+    #jp-chat-btn:hover { transform: scale(1.09); box-shadow: 0 10px 34px rgba(24,119,200,.65); }
+    #jp-chat-btn svg { width: 26px; height: 26px; fill: #fff; }
+    #jp-chat-btn .jp-close-i { display: none; }
+    #jp-chat-btn.open .jp-chat-i { display: none; }
+    #jp-chat-btn.open .jp-close-i { display: block; }
+
+    #jp-chat-box {
+      position: fixed; bottom: 96px; right: 28px; z-index: 999;
+      width: 354px; max-width: calc(100vw - 40px);
+      background: var(--surface); border-radius: 18px;
+      box-shadow: 0 18px 64px rgba(0,0,0,.32);
+      display: none; flex-direction: column;
+      overflow: hidden; border: 1px solid var(--border);
+      animation: jpUp .24s ease;
+    }
+    #jp-chat-box.open { display: flex; }
+    @keyframes jpUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+
+    .jp-chat-header {
+      background: linear-gradient(135deg, #08142a, var(--blue));
+      padding: 14px 16px; display: flex; align-items: center; gap: 11px;
+    }
+    .jp-chat-avatar-wrap {
+      width: 40px; height: 40px; border-radius: 50%; overflow: hidden;
+      flex-shrink: 0; border: 2px solid rgba(255,255,255,.28);
+    }
+    .jp-chat-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .jp-chat-header-info h4 { color: #fff; font-size: .9rem; font-weight: 700; margin: 0; }
+    .jp-chat-header-info p { color: rgba(255,255,255,.62); font-size: .71rem; margin: 2px 0 0; }
+    .jp-dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
+    .jp-messages {
+      flex: 1; overflow-y: auto; padding: 13px;
+      display: flex; flex-direction: column; gap: 10px;
+      max-height: 310px; min-height: 160px;
+      background: var(--bg);
+    }
+    .jp-messages::-webkit-scrollbar { width: 3px; }
+    .jp-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .jp-msg { display: flex; gap: 7px; align-items: flex-end; max-width: 90%; }
+    .jp-msg.bot { align-self: flex-start; }
+    .jp-msg.user { align-self: flex-end; flex-direction: row-reverse; }
+    .jp-msg-av {
+      width: 28px; height: 28px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+    }
+    .jp-msg-av img { width: 100%; height: 100%; object-fit: cover; }
+    .jp-user-av {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem; color: #fff; font-weight: 700;
+    }
+    .jp-bubble {
+      padding: 9px 13px; border-radius: 14px;
+      font-size: .85rem; line-height: 1.56; font-family: 'Inter', sans-serif;
+    }
+    .jp-msg.bot .jp-bubble {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); border-bottom-left-radius: 4px;
+    }
+    .jp-msg.user .jp-bubble {
+      background: linear-gradient(135deg, var(--blue), #2d8fdf);
+      color: #fff; border-bottom-right-radius: 4px;
+    }
+    .jp-typing {
+      display: flex; gap: 4px; align-items: center;
+      padding: 9px 13px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 14px; border-bottom-left-radius: 4px;
+    }
+    .jp-typing span {
+      width: 6px; height: 6px; background: var(--text-muted); border-radius: 50%;
+      animation: jpDot 1.2s infinite ease-in-out;
+    }
+    .jp-typing span:nth-child(2) { animation-delay: .2s; }
+    .jp-typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes jpDot { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+    .jp-input-area {
+      padding: 10px 12px; border-top: 1px solid var(--border);
+      display: flex; gap: 8px; align-items: center; background: var(--surface);
+    }
+    #jp-input {
+      flex: 1; border: 1.5px solid var(--border); border-radius: 22px;
+      padding: 8px 14px; font-size: .85rem; font-family: 'Inter', sans-serif;
+      outline: none; color: var(--text); background: var(--bg);
+      transition: border-color .2s;
+    }
+    #jp-input:focus { border-color: var(--blue); }
+    #jp-send {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: var(--blue); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, transform .15s;
+    }
+    #jp-send:hover { background: var(--blue-hover); transform: scale(1.08); }
+    #jp-send svg { width: 15px; height: 15px; fill: #fff; }
+    .jp-chat-footer {
+      text-align: center; padding: 5px 0 6px;
+      font-size: .67rem; color: var(--text-muted); background: var(--surface);
+    }
+    .jp-chat-footer a { color: var(--blue); text-decoration: none; }
+    [data-theme="dark"] .jp-chat-footer a { color: var(--blue-light); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; text-align: left; padding: 100px 6vw 60px 6vw; gap: 32px; }
+      .hero-right { order: -1; }
+      .hero-photo-img { width: 260px; height: 260px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-left { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
+      .about-badges { max-width: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-photo-side { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-photo-outer { width: 190px; height: 190px; }
+      .hero-name { font-size: 2.6rem; letter-spacing: -1px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .about-left { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav>
+    <a href="#home" class="nav-brand">
+      <div class="nav-avatar"><img src="ProfilePicture.jpg" alt="Jessie" /></div>
+      <span class="nav-name">Jessie Mark Pongaron</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="theme-icon">☀️</span>
+      </button>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+      <button class="hamburger" onclick="toggleMenu(this)" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" style="display:none;position:fixed;top:68px;left:0;right:0;background:rgba(4,8,18,.98);z-index:99;padding:22px 6vw;flex-direction:column;gap:18px;">
+    <a href="#about"    style="color:#fff;text-decoration:none;font-weight:600;" onclick="closeMenu()">About</a>
+    <a href="#services" style="color:#fff;text-decoration:none;font-weight:600;" onclick="closeMenu()">Services</a>
+    <a href="#projects" style="color:#fff;text-decoration:none;font-weight:600;" onclick="closeMenu()">Projects</a>
+    <a href="#faq"      style="color:#fff;text-decoration:none;font-weight:600;" onclick="closeMenu()">FAQ</a>
+    <a href="#contact"  style="color:#fff;text-decoration:none;font-weight:600;" onclick="closeMenu()">Contact</a>
+    <a href="#contact" class="btn-primary" style="text-align:center;display:block;" onclick="closeMenu()">Hire Me</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="home" class="hero">
+
+    <!-- Left: text -->
+    <div class="hero-left">
+      <h1 class="hero-name">Jessie Mark<br>Pongaron</h1>
+      <div class="hero-subtitle">AI Automation Specialist</div>
+      <div class="hero-contact-list">
+        <a href="mailto:jessiemarkpongaron@gmail.com" class="hero-contact-link">
+          <div class="hero-contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <span class="hero-contact-text">jessiemarkpongaron@gmail.com</span>
+        </a>
+        <a href="tel:+639171347458" class="hero-contact-link">
+          <div class="hero-contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <span class="hero-contact-text">+639171347458</span>
+        </a>
+      </div>
+      <div class="hero-action-btns">
+        <a href="#contact" class="btn-primary">Hire Me</a>
+        <a href="#projects" class="btn-outline">View My Work</a>
+      </div>
+    </div>
+
+    <!-- Right: photo -->
+    <div class="hero-right">
+      <img class="hero-photo-img" src="ProfilePicture.jpg" alt="Jessie Mark Pongaron" />
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <div class="stats">
+    <div class="stats-grid">
+      <div><div class="stat-num">50+</div><div class="stat-label">Automations Delivered</div></div>
+      <div><div class="stat-num">10+</div><div class="stat-label">Service Categories</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-label">AI Agents Running</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Custom Built</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="about">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-photo">
+          <img src="ProfilePicture.jpg" alt="Jessie Mark Pongaron" />
+        </div>
+        <div class="about-badges">
+          <span class="about-badge">n8n Expert</span>
+          <span class="about-badge">AI Agents</span>
+          <span class="about-badge">Workflow Automation</span>
+          <span class="about-badge">API Integration</span>
+          <span class="about-badge">Available Worldwide</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">About Me</div>
+        <h2>Hi, I'm Jessie — I build automations that actually work.</h2>
+        <p>I'm an AI Automation Specialist focused on building intelligent workflows and AI agents that solve real business problems. I help entrepreneurs and companies reclaim their time by automating repetitive processes end-to-end.</p>
+        <p>With expertise in n8n, leading AI platforms, and API integrations, I design systems that connect your existing tools, make smart decisions, and run 24/7 without you lifting a finger.</p>
+        <p>From a simple email automation to a fully autonomous AI agent — I build it custom, deliver it fast, and support it long-term.</p>
+        <div class="about-tools">
+          <h4>Tools &amp; Platforms</h4>
+          <div class="tools-row">
+            <span class="tool-chip">n8n</span>
+            <span class="tool-chip">Make</span>
+            <span class="tool-chip">Zapier</span>
+            <span class="tool-chip">OpenAI</span>
+            <span class="tool-chip">Claude AI</span>
+            <span class="tool-chip">Google Gemini</span>
+            <span class="tool-chip">HubSpot</span>
+            <span class="tool-chip">Airtable</span>
+            <span class="tool-chip">Notion</span>
+            <span class="tool-chip">GoHighLevel</span>
+            <span class="tool-chip">Slack</span>
+            <span class="tool-chip">Shopify</span>
+            <span class="tool-chip">Google Workspace</span>
+            <span class="tool-chip">Facebook API</span>
+            <span class="tool-chip">WhatsApp</span>
+            <span class="tool-chip">Telegram</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services" class="services">
+    <div class="section-head">
+      <div class="section-label">What I Do</div>
+      <h2 class="section-title">Services</h2>
+      <p class="section-sub">From simple workflow automation to fully autonomous AI agents — custom-built, delivered fast, supported long-term.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>AI Workflow Automation</h3>
+        <p>Automate repetitive business processes end-to-end — from data entry and file management to approval flows and notifications — using AI-powered workflows.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI Chatbot &amp; Virtual Agent Development</h3>
+        <p>Custom AI chat agents for websites, CRMs, or messaging platforms (Facebook, WhatsApp, Telegram) that handle customer inquiries, lead qualification, and support 24/7.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>CRM &amp; Sales Automation</h3>
+        <p>Automate lead capturing, follow-ups, pipeline updates, and reporting inside tools like HubSpot, GoHighLevel, Notion, or Airtable.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>Document &amp; Data Processing</h3>
+        <p>Extract, classify, and process data from PDFs, emails, forms, and spreadsheets automatically — no manual data entry needed.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>E-commerce Automation</h3>
+        <p>Automate order notifications, inventory tracking, abandoned cart recovery, customer feedback collection, and fulfillment updates.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✉️</div>
+        <h3>Email &amp; Communication Automation</h3>
+        <p>Intelligent email routing, auto-responses, drip campaigns, and scheduled messaging integrated with Gmail, Outlook, or SMTP.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Automation</h3>
+        <p>Schedule posts, auto-reply to comments/DMs, generate AI-written content, and aggregate analytics across platforms.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <h3>API &amp; Third-Party Integration</h3>
+        <p>Connect any two tools or platforms that don't talk to each other natively — from Google Workspace to Slack, Shopify, Stripe, and beyond.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>AI-Powered Reporting &amp; Analytics</h3>
+        <p>Automated dashboards and scheduled reports pulling live data from your tools, with AI-generated summaries and insights.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3>Custom AI Agent Development</h3>
+        <p>Purpose-built AI agents that can browse the web, answer questions from your knowledge base, use tools, and take actions autonomously on your behalf.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY ME ═══ -->
+  <section id="why-me" class="why">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">Why Work With Me</div>
+        <h2 class="section-title">Built for Results,<br/>Not Just Demos</h2>
+        <p class="section-sub">I don't just build automations — I build systems that genuinely solve your problems and keep running long after delivery.</p>
+        <ul class="why-list">
+          <li>
+            <div class="why-check">✓</div>
+            <div>
+              <strong>No Technical Knowledge Required</strong>
+              <p>I handle all the complexity. You get a system that runs quietly in the background, doing the work for you.</p>
+            </div>
+          </li>
+          <li>
+            <div class="why-check">✓</div>
+            <div>
+              <strong>Works With Your Existing Tools</strong>
+              <p>I integrate with the apps you already use — no need to switch platforms or retrain your team.</p>
+            </div>
+          </li>
+          <li>
+            <div class="why-check">✓</div>
+            <div>
+              <strong>Fast Delivery</strong>
+              <p>Simple automations in 1–3 days. Complex AI agents in 5–14 days. I respect your time and deadlines.</p>
+            </div>
+          </li>
+          <li>
+            <div class="why-check">✓</div>
+            <div>
+              <strong>Ongoing Support &amp; Maintenance</strong>
+              <p>I don't disappear after delivery. I offer ongoing support to keep your automations running and evolving.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-photo-side">
+        <div class="why-photo-wrap">
+          <img src="ProfilePicture.jpg" alt="Jessie Mark Pongaron" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section id="projects" class="projects">
+    <div class="section-head">
+      <div class="section-label">My Work</div>
+      <h2 class="section-title">Projects &amp; Portfolio</h2>
+      <p class="section-sub">Real automation workflows and AI solutions I've built — from social media bots to intelligent chat agents.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card" onclick="openLb('Projects/Facebook Chat AI Agent Workflow.png')">
+        <div class="project-thumb">
+          <img src="Projects/Facebook Chat AI Agent Workflow.png" alt="Facebook Chat AI Agent" loading="lazy" />
+          <div class="project-thumb-overlay"><span>View Full</span></div>
+        </div>
+        <div class="project-info">
+          <h3>Facebook Chat AI Agent</h3>
+          <p>AI-powered Facebook Messenger chatbot using Google Gemini with memory. Reads a knowledge base from Google Docs and responds intelligently to customer messages in real time.</p>
+          <div class="project-tags">
+            <span class="project-tag">n8n</span><span class="project-tag">AI Agent</span>
+            <span class="project-tag">Google Gemini</span><span class="project-tag">Facebook</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="openLb('Projects/Website Embedded AI Chatbot Workflow.png')">
+        <div class="project-thumb">
+          <img src="Projects/Website Embedded AI Chatbot Workflow.png" alt="Website Embedded AI Chatbot" loading="lazy" />
+          <div class="project-thumb-overlay"><span>View Full</span></div>
+        </div>
+        <div class="project-info">
+          <h3>Website Embedded AI Chatbot</h3>
+          <p>AI chatbot embedded directly on a website. Fetches FAQ knowledge base from GitHub at runtime and answers visitor questions using Google Gemini.</p>
+          <div class="project-tags">
+            <span class="project-tag">n8n</span><span class="project-tag">Webhook</span>
+            <span class="project-tag">Google Gemini</span><span class="project-tag">GitHub</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="openLb('Projects/Automated Weather Forecast Post Workflow.png')">
+        <div class="project-thumb">
+          <img src="Projects/Automated Weather Forecast Post Workflow.png" alt="Automated Weather Forecast Post" loading="lazy" />
+          <div class="project-thumb-overlay"><span>View Full</span></div>
+        </div>
+        <div class="project-info">
+          <h3>Automated Weather Forecast Post</h3>
+          <p>Fully automated pipeline combining live weather data with AI-generated content, then auto-posts to Facebook daily.</p>
+          <div class="project-tags">
+            <span class="project-tag">n8n</span><span class="project-tag">OpenWeatherMap</span>
+            <span class="project-tag">Google Gemini</span><span class="project-tag">Facebook</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="openLb('Projects/Automated Social Media Post Workflow.png')">
+        <div class="project-thumb">
+          <img src="Projects/Automated Social Media Post Workflow.png" alt="Automated Social Media Post" loading="lazy" />
+          <div class="project-thumb-overlay"><span>View Full</span></div>
+        </div>
+        <div class="project-info">
+          <h3>Automated Social Media Post</h3>
+          <p>AI-driven content pipeline that generates video scripts, produces videos via API, and auto-publishes to Facebook and YouTube on a schedule.</p>
+          <div class="project-tags">
+            <span class="project-tag">n8n</span><span class="project-tag">AI</span>
+            <span class="project-tag">Facebook</span><span class="project-tag">YouTube</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="openLb('Projects/Automated Backup Workflows.png')">
+        <div class="project-thumb">
+          <img src="Projects/Automated Backup Workflows.png" alt="Automated Backup" loading="lazy" />
+          <div class="project-thumb-overlay"><span>View Full</span></div>
+        </div>
+        <div class="project-info">
+          <h3>Automated Backup Workflow</h3>
+          <p>Scheduled automation that backs up all n8n workflows to Google Drive daily, organized into dated folders automatically.</p>
+          <div class="project-tags">
+            <span class="project-tag">n8n</span><span class="project-tag">Google Drive</span>
+            <span class="project-tag">Backup</span><span class="project-tag">Scheduled</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card" onclick="openLb('Projects/Website Creation.png')">
+        <div class="project-thumb">
+          <img src="Projects/Website Creation.png" alt="Website Creation" loading="lazy" />
+          <div class="project-thumb-overlay"><span>View Full</span></div>
+        </div>
+        <div class="project-info">
+          <h3>Company Website + AI Chatbot</h3>
+          <p>Full single-page company website featuring hero section, services grid, FAQ accordion, contact form, and embedded AI chatbot — hosted on GitHub Pages.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML / CSS</span><span class="project-tag">GitHub Pages</span>
+            <span class="project-tag">AI Chatbot</span><span class="project-tag">Web Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="jp-lightbox" onclick="closeLb()">
+    <button id="jp-lb-close" onclick="closeLb()">✕</button>
+    <img id="jp-lb-img" src="" alt="Project" onclick="event.stopPropagation()" />
+  </div>
+
+  <!-- ═══ FAQ ═══ -->
+  <section id="faq" class="faq">
+    <div class="section-head center">
+      <div class="section-label">Got Questions?</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know about working with me.</p>
+    </div>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Who is Jessie Mark Pongaron?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>I'm an AI Automation Specialist who helps businesses save time and scale faster by building intelligent workflows and AI agents. I design, build, and deploy custom automation systems tailored to your specific business needs using tools like n8n, OpenAI, Claude, Google Gemini, and more.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What kind of businesses do you work with?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>I work with businesses of all sizes — from solo entrepreneurs and startups to growing SMEs. My clients include e-commerce stores, service-based businesses, agencies, coaches, real estate professionals, and SaaS companies. I work remotely and serve clients worldwide.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What tools and platforms do you use?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>I work with leading automation and AI platforms including n8n, Make (Integromat), Zapier, OpenAI, Anthropic Claude, Google Gemini, HubSpot, Airtable, Notion, GoHighLevel, Slack, Shopify, Stripe, and many more. I choose the best stack based on your specific needs and budget.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How long does it take to build a workflow or automation?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>It depends on the complexity. Simple automations can be delivered in 1–3 business days. More complex multi-step workflows or AI agents typically take 5–14 business days. I'll give you a clear timeline estimate before we begin.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How much do your services cost?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>Pricing depends on the scope and complexity of the project. I offer project-based pricing for one-time builds, and monthly retainer packages for ongoing automation support and maintenance. Contact me to get a free consultation and custom quote.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do I need technical knowledge to use the automations you build?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>No. I build everything so it runs automatically in the background. If you want to monitor or manage it yourself, I provide simple dashboards and a walkthrough of how it works. You don't need any coding or technical experience.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Can you integrate with the tools I'm already using?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>Yes. I specialize in connecting tools that don't natively talk to each other. Whether you're using Google Workspace, CRMs, e-commerce platforms, payment gateways, or custom apps, I can integrate them into a seamless automated workflow.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you offer a free consultation?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>Yes! I offer a free discovery call to understand your business needs, identify opportunities for automation, and recommend the best solution. Simply reach out via email or the contact form to schedule your free consultation.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What happens after the automation is built?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>After delivery, I walk you through the entire system, provide documentation, and offer a testing period to make sure everything runs perfectly. I also offer ongoing support and maintenance packages so your automations stay up to date.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Can you build an AI chatbot for my website or Facebook page?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>Absolutely. I build AI-powered chatbots and virtual agents that can answer customer questions, qualify leads, take bookings, and escalate to a human when needed — available 24/7 on your website, Facebook Messenger, WhatsApp, or Telegram.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Is my data safe?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>Yes. I follow best practices for data security, use encrypted connections, and never store your sensitive data beyond what's needed for the automation to function. I can also sign NDAs upon request.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I get started?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer"><p>Getting started is easy. Reach out via the contact form below or email me directly at jessiemarkpongaron@gmail.com. We'll schedule a free discovery call, I'll propose a solution, and once we agree on scope and timeline — I get to work.</p></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <div class="cta-band">
+    <h2>Ready to Automate Your Business?</h2>
+    <p>Let's find out exactly how much time and money automation can save you — starting with a free discovery call.</p>
+    <a href="#contact" class="btn-primary">Get a Free Consultation</a>
+  </div>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="contact">
+    <div class="section-head">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Let's Build Something Together</h2>
+      <p class="section-sub">Tell me about your business and I'll find the best automation solution for you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:jessiemarkpongaron@gmail.com">jessiemarkpongaron@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone / WhatsApp</h4>
+            <a href="tel:+639171347458">+63 917 134 7458</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Response Time</h4>
+            <p>Within 24 hours on business days</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div>
+            <h4>Service Area</h4>
+            <p>Remote — Serving clients worldwide</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="handleContactSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Juan" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="dela Cruz" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="service">Service You're Interested In</label>
+          <select id="service">
+            <option value="">— Select a service —</option>
+            <option>AI Workflow Automation</option>
+            <option>AI Chatbot &amp; Virtual Agent</option>
+            <option>CRM &amp; Sales Automation</option>
+            <option>Document &amp; Data Processing</option>
+            <option>E-commerce Automation</option>
+            <option>Email &amp; Communication Automation</option>
+            <option>Social Media Automation</option>
+            <option>API &amp; Third-Party Integration</option>
+            <option>AI-Powered Reporting &amp; Analytics</option>
+            <option>Custom AI Agent Development</option>
+            <option>Not sure — let's discuss</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Me About Your Business</label>
+          <textarea id="message" placeholder="Describe what you'd like to automate or what problem you want to solve..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message →</button>
+        <p id="form-msg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Jessie Mark Pongaron</div>
+        <p>AI Automation Specialist building intelligent workflows and AI agents that help businesses save time and scale faster.</p>
+        <p class="tagline">"Automate Smarter. Scale Faster."</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">AI Workflow Automation</a></li>
+          <li><a href="#services">AI Chatbot Development</a></li>
+          <li><a href="#services">CRM &amp; Sales Automation</a></li>
+          <li><a href="#services">E-commerce Automation</a></li>
+          <li><a href="#services">API Integration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="mailto:jessiemarkpongaron@gmail.com">Email Me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Jessie Mark Pongaron. All rights reserved.</p>
+      <div class="social-links">
+        <a href="mailto:jessiemarkpongaron@gmail.com" title="Email">✉</a>
+        <a href="tel:+639171347458" title="Phone">📞</a>
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="LinkedIn">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ AI CHAT WIDGET ═══ -->
+  <button id="jp-chat-btn" onclick="toggleChat()" aria-label="Open AI Assistant">
+    <svg class="jp-chat-i" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zm-2 10H6V10h12v2zm0-4H6V6h12v2z"/></svg>
+    <svg class="jp-close-i" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+
+  <div id="jp-chat-box">
+    <div class="jp-chat-header">
+      <div class="jp-chat-avatar-wrap">
+        <img src="ProfilePicture.jpg" alt="Jessie" />
+      </div>
+      <div class="jp-chat-header-info">
+        <h4>Jessie's AI Assistant</h4>
+        <p><span class="jp-dot"></span>Online — Ask me anything!</p>
+      </div>
+    </div>
+    <div class="jp-messages" id="jp-messages">
+      <div class="jp-msg bot">
+        <div class="jp-msg-av"><img src="ProfilePicture.jpg" alt="AI" /></div>
+        <div class="jp-bubble">Hi there! 👋 I'm Jessie's AI Assistant. Ask me anything about his services, automation solutions, or how he can help your business!</div>
+      </div>
+    </div>
+    <div class="jp-input-area">
+      <input id="jp-input" type="text" placeholder="Type your message..." maxlength="500" onkeydown="if(event.key==='Enter')sendChat()" />
+      <button id="jp-send" onclick="sendChat()" aria-label="Send">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+    <div class="jp-chat-footer">Powered by AI · <a href="#contact" onclick="toggleChat()">Talk to Jessie directly</a></div>
+  </div>
+
+  <script>
+    // ─── Theme ───
+    function toggleTheme() {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      localStorage.setItem('theme', dark ? 'light' : 'dark');
+      updateThemeIcon();
+    }
+    function updateThemeIcon() {
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.getElementById('theme-icon').textContent = dark ? '☀️' : '🌙';
+    }
+    updateThemeIcon();
+
+    // ─── Mobile menu ───
+    function toggleMenu(btn) {
+      const menu = document.getElementById('mobile-menu');
+      const open = menu.style.display === 'flex';
+      menu.style.display = open ? 'none' : 'flex';
+      btn.querySelectorAll('span')[0].style.transform = open ? '' : 'rotate(45deg) translate(5px,5px)';
+      btn.querySelectorAll('span')[1].style.opacity  = open ? '1' : '0';
+      btn.querySelectorAll('span')[2].style.transform = open ? '' : 'rotate(-45deg) translate(5px,-5px)';
+    }
+    function closeMenu() {
+      document.getElementById('mobile-menu').style.display = 'none';
+    }
+
+    // ─── FAQ ───
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // ─── Lightbox ───
+    function openLb(src) {
+      document.getElementById('jp-lb-img').src = src;
+      document.getElementById('jp-lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() {
+      document.getElementById('jp-lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLb(); } });
+
+    // ─── Contact form ───
+    async function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-submit');
+      const msg = document.getElementById('form-msg');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      try {
+        await fetch('https://n8n.jessiepongaron.cloud/webhook/portfolio-contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            firstName: document.getElementById('fname').value,
+            lastName:  document.getElementById('lname').value,
+            email:     document.getElementById('email').value,
+            service:   document.getElementById('service').value,
+            message:   document.getElementById('message').value,
+          })
+        });
+        msg.style.display = 'block';
+        msg.style.color = '#22c55e';
+        msg.textContent = '✓ Message sent! I\'ll be in touch within 24 hours.';
+        e.target.reset();
+      } catch {
+        msg.style.display = 'block';
+        msg.style.color = '#ef4444';
+        msg.textContent = 'Message sent! (If you don\'t hear back, email me directly.)';
+        e.target.reset();
+      }
+      btn.disabled = false; btn.textContent = 'Send Message →';
+    }
+
+    // ─── Scroll spy ───
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY + 80;
+      document.querySelectorAll('section[id]').forEach(s => {
+        if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
+          document.querySelectorAll('.nav-links a').forEach(a => {
+            a.style.color = a.getAttribute('href') === '#' + s.id
+              ? '#fff' : 'rgba(255,255,255,.7)';
+          });
+        }
+      });
+    });
+
+    // ─── AI Chat ───
+    const CHAT_WEBHOOK = 'https://n8n.jessiepongaron.cloud/webhook/portfolio-chat';
+
+    function toggleChat() {
+      const box = document.getElementById('jp-chat-box');
+      const btn = document.getElementById('jp-chat-btn');
+      box.classList.toggle('open');
+      btn.classList.toggle('open');
+      if (box.classList.contains('open')) {
+        setTimeout(() => document.getElementById('jp-input').focus(), 280);
+      }
+    }
+
+    function appendMsg(role, text) {
+      const c = document.getElementById('jp-messages');
+      const wrap = document.createElement('div');
+      wrap.className = 'jp-msg ' + role;
+      const av = document.createElement('div');
+      if (role === 'bot') {
+        av.className = 'jp-msg-av';
+        av.innerHTML = '<img src="ProfilePicture.jpg" alt="AI" />';
+      } else {
+        av.className = 'jp-user-av';
+        av.textContent = 'You';
+      }
+      const bubble = document.createElement('div');
+      bubble.className = 'jp-bubble';
+      bubble.textContent = text;
+      wrap.appendChild(av);
+      wrap.appendChild(bubble);
+      c.appendChild(wrap);
+      c.scrollTop = c.scrollHeight;
+      return wrap;
+    }
+
+    function showTyping() {
+      const c = document.getElementById('jp-messages');
+      const wrap = document.createElement('div');
+      wrap.className = 'jp-msg bot'; wrap.id = 'jp-typing';
+      const av = document.createElement('div');
+      av.className = 'jp-msg-av';
+      av.innerHTML = '<img src="ProfilePicture.jpg" alt="AI" />';
+      const typing = document.createElement('div');
+      typing.className = 'jp-typing';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      wrap.appendChild(av); wrap.appendChild(typing);
+      c.appendChild(wrap); c.scrollTop = c.scrollHeight;
+    }
+    function hideTyping() {
+      const el = document.getElementById('jp-typing');
+      if (el) el.remove();
+    }
+
+    async function sendChat() {
+      const input = document.getElementById('jp-input');
+      const msg = input.value.trim();
+      if (!msg) return;
+      input.value = ''; input.disabled = true;
+      document.getElementById('jp-send').disabled = true;
+      appendMsg('user', msg);
+      showTyping();
+      try {
+        const res = await fetch(CHAT_WEBHOOK, {
+          method: 'POST',
+          body: new URLSearchParams({ message: msg })
+        });
+        const data = await res.json();
+        hideTyping();
+        appendMsg('bot', data.reply || "Sorry, I couldn't get a response. Please try again or contact Jessie directly.");
+      } catch {
+        hideTyping();
+        appendMsg('bot', "I'm having trouble connecting right now. Please email jessiemarkpongaron@gmail.com and Jessie will get back to you shortly!");
+      }
+      input.disabled = false;
+      document.getElementById('jp-send').disabled = false;
+      input.focus();
+    }
+  </script>
+</body>
+</html>
